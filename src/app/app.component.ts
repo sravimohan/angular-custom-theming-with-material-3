@@ -3,12 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonsComponent } from "./buttons/buttons.component";
 import { CheckboxesComponent } from "./checkboxes/checkboxes.component";
 import { MatDividerModule } from '@angular/material/divider';
-import { InputsComponent } from "./inputs/inputs.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AddressFormComponent } from "./address-form/address-form.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatDividerModule, ButtonsComponent, CheckboxesComponent, InputsComponent],
+  imports: [RouterOutlet, MatDividerModule, ButtonsComponent, CheckboxesComponent, DashboardComponent, AddressFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
