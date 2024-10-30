@@ -1,27 +1,43 @@
-# AngularCustomThemingWithMaterial3
+# Angular Custom Theming With Material 3
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+This example is built with Angular 18 and Material 3.
 
-## Development server
+### Steps
+- Create Angular Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+     ```ng new <project name>```
 
-## Code scaffolding
+- Add Angular Material 
+    
+    ```ng add @angular/material```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Generate Custom Theme and choose colors.
 
-## Build
+    ```ng generate @angular/material:m3-theme```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    In this example, 'use system-level variables' is not used.
 
-## Running unit tests
+    ![alt text](image.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- In your global 'styles.scss', add 
+    ```
+        @use "./m3-theme" as theme;
 
-## Running end-to-end tests
+        ---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+        :root {
+            @include mat.all-component-themes(theme.$light-theme);
+        }
+    ```
 
-## Further help
+    You can also choose to apply the theme per component instead of all components. See the repo for the full example.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- That's it. Done.
+
+### Documentation
+
+[https://material.angular.io/guide/theming](https://material.angular.io/guide/theming
+)
+
+[![Watch the video](https://img.youtube.com/vi/zPp4LopqFAc/hqdefault.jpg)](https://www.youtube.com/watch?v=zPp4LopqFAc)
+
